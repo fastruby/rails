@@ -4,6 +4,10 @@ ORIG_ARGV = ARGV.dup
 
 require "bundler/setup"
 require "active_support/core_ext/kernel/reporting"
+require "simplecov"
+SimpleCov.start do
+  track_files "/lib/**/*.rb"
+end
 
 silence_warnings do
   Encoding.default_internal = Encoding::UTF_8
