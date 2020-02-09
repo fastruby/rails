@@ -106,6 +106,7 @@ group :test do
   gem "minitest-bisect"
   gem "minitest-retry"
   gem "minitest-reporters"
+  gem "simplecov"
 
   platforms :mri do
     gem "stackprof"

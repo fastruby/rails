@@ -25,8 +25,12 @@ task default: %w(test test:isolated)
   desc "Run #{task_name} task for all projects"
   task task_name do
     errors = []
+    system("bundle install skunk")
     FRAMEWORKS.each do |project|
       system(%(cd #{project} && #{$0} #{task_name} --trace)) || errors << project
+      if task_name == "test"
+        system("skunk lib/")
+      end
     end
     fail("Errors in #{errors.join(', ')}") unless errors.empty?
   end

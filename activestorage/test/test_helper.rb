@@ -10,6 +10,10 @@ require "active_support/core_ext/object/try"
 require "active_support/testing/autorun"
 require "active_storage/service/mirror_service"
 require "image_processing/mini_magick"
+require "simplecov"
+SimpleCov.start do
+  track_files "/lib/**/*.rb"
+end
 
 begin
   require "byebug"
