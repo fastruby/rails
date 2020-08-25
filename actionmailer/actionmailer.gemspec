@@ -39,4 +39,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency "mail", ["~> 2.5", ">= 2.5.4"]
   s.add_dependency "rails-dom-testing", "~> 2.0"
+
+  s.add_development_dependency "simplecov"
 end

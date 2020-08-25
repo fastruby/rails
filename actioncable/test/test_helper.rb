@@ -1,5 +1,14 @@
 # frozen_string_literal: true
 
+require "simplecov"
+
+SimpleCov.command_name "Test: #{rand(1024)}"
+
+SimpleCov.start do
+  track_files '{lib}/**/*.rb' 
+  add_filter "/test/"
+end
+
 require "action_cable"
 require "active_support/testing/autorun"
 require "active_support/testing/method_call_assertions"

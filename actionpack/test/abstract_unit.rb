@@ -1,5 +1,14 @@
 # frozen_string_literal: true
 
+require "simplecov"
+
+SimpleCov.command_name "Test: #{rand(1024)}"
+
+SimpleCov.start do
+  track_files '{lib}/**/*.rb' 
+  add_filter "/test/"
+end
+
 $:.unshift File.expand_path("lib", __dir__)
 
 require "active_support/core_ext/kernel/reporting"

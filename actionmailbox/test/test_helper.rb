@@ -1,5 +1,14 @@
 # frozen_string_literal: true
 
+require "simplecov"
+
+SimpleCov.command_name "Test: #{rand(1024)}"
+
+SimpleCov.start do
+  track_files '{lib}/**/*.rb' 
+  add_filter "/test/"
+end
+
 ENV["RAILS_ENV"] = "test"
 ENV["RAILS_INBOUND_EMAIL_PASSWORD"] = "tbsy84uSV1Kt3ZJZELY2TmShPRs91E3yL4tzf96297vBCkDWgL"
 
