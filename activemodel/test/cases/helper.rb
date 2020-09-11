@@ -5,6 +5,7 @@ require "simplecov"
 SimpleCov.command_name "Test: #{rand(1024)}"
 
 SimpleCov.start do
+  enable_coverage :branch
   track_files '{lib}/**/*.rb' 
   add_filter "/test/"
 end
